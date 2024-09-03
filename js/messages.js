@@ -19,7 +19,8 @@ function getMessagesFile(lang) {
     if (lang.length > 0) {
         lang = `-${lang}`
     }
-    let path = `/static/messages/messages${lang}.json`
+    let path = location.host.indexOf("github.io") > -1 ? "/Passwords" : ""
+    path = `${path}/static/messages/messages${lang}.json`
     return fetch(path)
         .then(response => response.json())
 }
