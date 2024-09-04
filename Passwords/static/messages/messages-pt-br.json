@@ -1,0 +1,41 @@
+{
+    "index": {
+        "page_title": {
+            "textContent": "Senhas"
+        },
+        "title": {
+            "textContent": "Bem vindo a pagina Mobile-Friendly!"
+        },
+        "p": {
+            "textContent": "Este conteúdo vai se ajustar automaticamente em diferentes tamanhos de tela"
+        }
+    },
+    "class1": {
+        "page_title": {
+            "textContent": "Olimpíadas"
+        },
+        "header": {
+            "h1": {
+                "textContent": "Atletas do Brasil"
+            }
+        },
+        "main": {
+            "section": {
+                "input": {
+                    "placeholder": "Digite o nome do atleta"
+                },
+                "button": {
+                    "textContent": "Pesquisar"
+                }
+            }
+        },
+        "footer": {
+            "p1": {
+                "textContent": "2024 - Atletas do Brasil. Todos os direitos reservados"
+            },
+            "p2": {
+                "textContent": "Entre em contato pelo email: abc@def.com"
+            }
+        }
+    }
+}

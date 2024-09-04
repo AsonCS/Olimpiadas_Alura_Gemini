@@ -1,0 +1,41 @@
+{
+    "index": {
+        "page_title": {
+            "textContent": "Passwords"
+        },
+        "title": {
+            "textContent": "Welcome to My Mobile-Friendly Page!"
+        },
+        "p": {
+            "textContent": "This content will automatically adjust to fit different screen sizes."
+        }
+    },
+    "class1": {
+        "page_title": {
+            "textContent": "Olympics"
+        },
+        "header": {
+            "h1": {
+                "textContent": "Brazilian athletes"
+            }
+        },
+        "main": {
+            "section": {
+                "input": {
+                    "placeholder": "Type the athlete's name"
+                },
+                "button": {
+                    "textContent": "Search"
+                }
+            }
+        },
+        "footer": {
+            "p1": {
+                "textContent": "2024 - Brazilian athletes. All rights reserved"
+            },
+            "p2": {
+                "textContent": "Contact by email: abc@def.com"
+            }
+        }
+    }
+}
