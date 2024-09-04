@@ -1,12 +1,10 @@
-/**
- * Supported languages.
- * @returns {JSON} Key language => Value path.
- */
-let supportedLanguages = {
-    "pt-br": "pt-br",
-    "pt": "pt-br",
-    "en-us": "",
-    "en": ""
+const LANG_EN_US = "en-us"
+const LANG_PT_BR = "pt-br"
+const PATH_EN_US = ""
+const PATH_PT_BR = "-" + LANG_PT_BR
+
+function isLangPtBr() {
+    return document.documentElement.lang.toLowerCase() === LANG_PT_BR
 }
 
 /**
@@ -15,9 +13,12 @@ let supportedLanguages = {
  * @returns {Promise<JSON>} Messages.
  */
 function getMessagesFile(lang) {
-    lang = supportedLanguages[lang.toLowerCase()] || ""
-    if (lang.length > 0) {
-        lang = `-${lang}`
+    switch (lang) {
+        case LANG_PT_BR:
+            lang = PATH_PT_BR
+            break
+        default:
+            lang = PATH_EN_US
     }
     let path = `/Passwords/static/messages/messages${lang}.json`
     return fetch(path)
@@ -52,10 +53,9 @@ async function loadAllPageMessages() {
         }
     }
 }
-window.loadAllPageMessages = loadAllPageMessages;
 
 (async () => {
-    //document.documentElement.lang = "pt-br"
+    //document.documentElement.lang = LANG_PT_BR
     if (document.documentElement.lang) {
         document.documentElement.lang = document.documentElement.lang.toLocaleLowerCase()
     } else {
@@ -69,11 +69,11 @@ window.loadAllPageMessages = loadAllPageMessages;
     button.style = "position: absolute; right: 0; top: 0;"
     button.onclick = () => {
         switch (document.documentElement.lang) {
-            case "en-us":
-                document.documentElement.lang = "pt-br"
+            case LANG_EN_US:
+                document.documentElement.lang = LANG_PT_BR
                 break
             default:
-                document.documentElement.lang = "en-us"
+                document.documentElement.lang = LANG_EN_US
         }
         button.textContent = document.documentElement.lang
         loadAllPageMessages()
