@@ -19,8 +19,7 @@ function getMessagesFile(lang) {
     if (lang.length > 0) {
         lang = `-${lang}`
     }
-    let path = location.host.indexOf("github.io") > -1 ? "/Passwords" : ""
-    path = `${path}/static/messages/messages${lang}.json`
+    let path = `/Passwords/static/messages/messages${lang}.json`
     return fetch(path)
         .then(response => response.json())
 }
@@ -38,24 +37,48 @@ async function loadAllPageMessages() {
     //console.log(messages)
     let nodes = document.querySelectorAll("[data-message]")
     for (let i = 0; i < nodes.length; i++) {
-        let message = messages
-        nodes[i].getAttribute("data-message")
-            .split(".")
-            .forEach((path) => {
-                message = message[path]
-            })
-        nodes[i].textContent = message
+        try {
+            let message = messages
+            let type = { "textContent": "" }
+            nodes[i].getAttribute("data-message")
+                .split(".")
+                .forEach((path) => {
+                    type = path
+                    message = message[path]
+                })
+            nodes[i][type] = message
+        } catch (e) {
+            console.error(e)
+        }
     }
 }
 window.loadAllPageMessages = loadAllPageMessages;
 
 (async () => {
-    document.documentElement.lang = "pt-BR"
-    if (!document.documentElement.lang) {
-        document.documentElement.lang = navigator.language
+    //document.documentElement.lang = "pt-br"
+    if (document.documentElement.lang) {
+        document.documentElement.lang = document.documentElement.lang.toLocaleLowerCase()
+    } else {
+        document.documentElement.lang = navigator.language.toLocaleLowerCase()
     }
     loadAllPageMessages()
     window.onlanguagechange = loadAllPageMessages
+
+    let button = document.createElement("button")
+    button.textContent = document.documentElement.lang
+    button.style = "position: absolute; right: 0; top: 0;"
+    button.onclick = () => {
+        switch (document.documentElement.lang) {
+            case "en-us":
+                document.documentElement.lang = "pt-br"
+                break
+            default:
+                document.documentElement.lang = "en-us"
+        }
+        button.textContent = document.documentElement.lang
+        loadAllPageMessages()
+    }
+    document.body.appendChild(button)
 })()
 
 /**
