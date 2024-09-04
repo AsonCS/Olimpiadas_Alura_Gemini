@@ -151,6 +151,8 @@ section button:hover {
     /* Cor do texto */
     margin: 0.5rem 0;
     /* Margem acima e abaixo */
+    max-width: 80vw;
+    /* Largura máxima */
 }
 
 /* Estiliza o rodapé da página */
