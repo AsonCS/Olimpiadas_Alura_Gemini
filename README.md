@@ -44,10 +44,12 @@
 			<td><img src="https://asoncs.github.io/Passwords/class2/print4.png"></td>
 		</tr>
 		<tr>
-			<td>
-				<video height="360" width="360" controls>
-					<source src="https://asoncs.github.io/Passwords/class2/record.mp4" type="video/mp4" />
-				</video>
+			<td colspan="4">
+				<a href="https://asoncs.github.io/Passwords/class2/record.mp4" target="_blank">
+					<img src="https://asoncs.github.io/Passwords/class2/print5.png">
+					<br />
+					Recording
+				</a>
 			</td>
 		</tr>
 	</table>
