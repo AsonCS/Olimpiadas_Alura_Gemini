@@ -36,7 +36,7 @@ h1 {
 }
 
 /* Estiliza as seções da página */
-section {
+section, .section-form {
     display: flex;
     /* Usa Flexbox para layout */
     flex-direction: column;
