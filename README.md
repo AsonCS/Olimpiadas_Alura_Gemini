@@ -29,7 +29,7 @@
 	</a>
 </div>
 
-# Class 2 result
+# Class 2 and 3 result
 
 <div align="center">
 	<a href="https://asoncs.github.io/Passwords/class2" target="_blank">
