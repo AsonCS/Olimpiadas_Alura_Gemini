@@ -1,6 +1,13 @@
-.kotlin/
-.idea/
-.kotlin/*
+*.iml
+.gradle
+/local.properties
 .idea/*
-.kotlin
 .idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.kotlin
+composeApp/build
