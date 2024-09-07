@@ -11,3 +11,4 @@
 local.properties
 .kotlin
 composeApp/build
+kotlin-js-store/yarn.lock
