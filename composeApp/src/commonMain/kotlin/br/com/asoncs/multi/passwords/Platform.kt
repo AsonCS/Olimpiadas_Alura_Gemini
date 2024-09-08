@@ -2,6 +2,9 @@ package br.com.asoncs.multi.passwords
 
 interface Platform {
     val name: String
+
+    fun openLink(url: String) {
+    }
 }
 
-expect fun getPlatform(): Platform
+expect val platform: Platform
