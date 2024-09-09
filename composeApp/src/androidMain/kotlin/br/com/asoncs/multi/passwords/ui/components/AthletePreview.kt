@@ -1,10 +1,10 @@
 package br.com.asoncs.multi.passwords.ui.components
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import br.com.asoncs.multi.passwords.model.Athlete
+import br.com.asoncs.multi.passwords.ui.DevicePreview
 
-@Preview
+@DevicePreview
 @Composable
 private fun AthletePreview() {
     Athlete(

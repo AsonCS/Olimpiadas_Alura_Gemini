@@ -11,13 +11,13 @@ fun koinApplication() = koinApplication {
     modules(
         module {
             // Repository
-            factory {
-                Repository(get())
+            factory<Repository> {
+                Repository.Impl(get())
             }
 
             // ViewModel
-            viewModel {
-                AppViewModel(
+            viewModel<AppViewModel> {
+                AppViewModel.Impl(
                     repository = get()
                 )
             }

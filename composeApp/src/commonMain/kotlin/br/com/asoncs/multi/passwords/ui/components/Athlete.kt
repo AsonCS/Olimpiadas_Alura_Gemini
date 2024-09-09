@@ -5,7 +5,9 @@ package br.com.asoncs.multi.passwords.ui.components
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Card
@@ -23,13 +25,12 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import br.com.asoncs.multi.passwords.model.Athlete
 import br.com.asoncs.multi.passwords.platform
+import br.com.asoncs.multi.passwords.ui.home.TAG_ATHLETE
 import br.com.asoncs.multi.passwords.ui.theme.appColors
 import br.com.asoncs.multi.passwords.ui.theme.appColorsA1
 import br.com.asoncs.multi.passwords.ui.theme.appColorsHeadline2
 import br.com.asoncs.multi.passwords.ui.theme.appTypography
 import br.com.asoncs.multi.passwords.util.log
-
-const val TAG = "Athlete"
 
 @Composable
 fun Athlete(
@@ -38,6 +39,10 @@ fun Athlete(
 ) {
     Card(
         modifier
+            .widthIn(
+                max = 1_200.dp
+            )
+            .fillMaxWidth(0.9f)
             .padding(8.dp),
         elevation = 2.dp,
         shape = RoundedCornerShape(8.dp)
@@ -65,7 +70,7 @@ fun Athlete(
                     }
                 },
                 onClick = {
-                    TAG.log("openLink: ${athlete.instagram}")
+                    TAG_ATHLETE.log("openLink: ${athlete.instagram}")
                     platform.openLink(athlete.instagram)
                 },
                 onHover = {
@@ -78,7 +83,8 @@ fun Athlete(
 
             Text(
                 athlete.description,
-                color = appColors().onBackground
+                color = appColors().onBackground,
+                style = appTypography().body1
             )
 
             var a1TextDecoration by remember {
@@ -96,7 +102,7 @@ fun Athlete(
                     }
                 },
                 onClick = {
-                    TAG.log("openLink: ${athlete.wiki}")
+                    TAG_ATHLETE.log("openLink: ${athlete.wiki}")
                     platform.openLink(athlete.wiki)
                 },
                 onHover = {

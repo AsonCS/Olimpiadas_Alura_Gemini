@@ -1,14 +1,12 @@
 package br.com.asoncs.multi.passwords.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 
 @Composable
 fun AppTheme(
-    @Suppress("SimplifyBooleanWithConstants")
-    isDarkTheme: Boolean = false && isSystemInDarkTheme(),
+    isDarkTheme: Boolean = false,//isSystemInDarkTheme(),
     isWidthSizeExpanded: Boolean = false,
     content: @Composable () -> Unit
 ) {
@@ -19,12 +17,12 @@ fun AppTheme(
             themeLightColors,
         shapes = themeShapes,
         typography = if (isWidthSizeExpanded)
-            themeTypographyExpanded
+            themeTypographyExpanded()
         else
-            themeTypography
+            themeTypography()
     ) {
         Surface(
-            contentColor = appColors().background,
+            color = appColors().background,
             content = content
         )
     }

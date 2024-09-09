@@ -1,30 +1,70 @@
 package br.com.asoncs.multi.passwords.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import br.com.asoncs.multi.passwords.data.Repository
 import br.com.asoncs.multi.passwords.ui.state.UiHomeAthleteState
-import kotlinx.coroutines.coroutineScope
+import br.com.asoncs.multi.passwords.ui.state.UiHomeAthleteState.Empty
+import br.com.asoncs.multi.passwords.ui.state.UiHomeAthleteState.Loading
+import br.com.asoncs.multi.passwords.ui.state.UiHomeAthleteState.Success
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
-class AppViewModel(
-    private val repository: Repository
-) : ViewModel() {
+abstract class AppViewModel : ViewModel() {
 
-    private val _uiHomeAthleteState = MutableStateFlow(UiHomeAthleteState())
-    val uiHomeAthleteState = _uiHomeAthleteState.asStateFlow()
+    class Impl(
+        private val repository: Repository
+    ) : AppViewModel() {
 
-    suspend fun loadAthletes() {
-        coroutineScope {
-            repository.athletes().collect { athletes ->
-                _uiHomeAthleteState.update {
-                    it.copy(
-                        athletes = athletes
-                    )
+        private val _uiHomeAthleteState = MutableStateFlow<UiHomeAthleteState>(
+            Loading
+        )
+
+        override suspend fun loadAthletes() {
+            viewModelScope.launch {
+                repository.athletes.collect { athletes ->
+                    _uiHomeAthleteState.update {
+                        if (athletes.isEmpty())
+                            Empty(false)
+                        else
+                            Success(athletes)
+                    }
                 }
             }
+            repository.loadAthletes()
         }
+
+        override suspend fun searchAthletes(
+            searchText: String
+        ) {
+            if (searchText.isBlank()) {
+                _uiHomeAthleteState.update {
+                    Empty(true)
+                }
+                return
+            }
+
+            _uiHomeAthleteState.update {
+                Loading
+            }
+            repository.searchAthletes(searchText)
+        }
+
+        override fun uiHomeAthleteState() = _uiHomeAthleteState.asStateFlow()
+
     }
+
+    open suspend fun loadAthletes() {
+    }
+
+    open suspend fun searchAthletes(
+        searchText: String
+    ) {
+    }
+
+    abstract fun uiHomeAthleteState(): StateFlow<UiHomeAthleteState>
 
 }
