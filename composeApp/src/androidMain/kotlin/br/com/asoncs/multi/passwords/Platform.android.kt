@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
-import android.util.Log
 import androidx.activity.ComponentActivity
+import br.com.asoncs.multi.passwords.util.error
 
 class AndroidPlatform : Platform {
 
@@ -22,7 +22,6 @@ class AndroidPlatform : Platform {
         url: String
     ) {
         runCatching {
-            Log.d(this::class.java.simpleName, "openLink url=$url")
             context?.startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
@@ -30,7 +29,7 @@ class AndroidPlatform : Platform {
                 )
             )
         }.onFailure {
-            Log.e(this::class.java.simpleName, "openLink", it)
+            error(it, "openLink")
         }.getOrNull()
     }
 

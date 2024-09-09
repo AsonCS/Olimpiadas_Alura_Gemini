@@ -12,4 +12,5 @@ actual val platform = object : Platform {
         window.open(url, "_blank")
             ?.focus()
     }
+
 }

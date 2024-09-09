@@ -11,11 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import br.com.asoncs.multi.passwords.ui.components.Athlete
 import br.com.asoncs.multi.passwords.ui.viewmodel.AppViewModel
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun HomeAthletes(
-    appViewModel: AppViewModel,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    appViewModel: AppViewModel = koinViewModel()
 ) {
     val uiState by appViewModel.uiHomeAthleteState.collectAsState()
 

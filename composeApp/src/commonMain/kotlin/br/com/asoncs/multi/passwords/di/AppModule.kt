@@ -3,17 +3,30 @@ package br.com.asoncs.multi.passwords.di
 import br.com.asoncs.multi.passwords.data.Repository
 import br.com.asoncs.multi.passwords.ui.viewmodel.AppViewModel
 import kotlinx.serialization.json.Json
+import org.koin.core.module.dsl.viewModel
+import org.koin.dsl.koinApplication
+import org.koin.dsl.module
 
-@Suppress("MemberVisibilityCanBePrivate")
-object AppModule {
+fun koinApplication() = koinApplication {
+    modules(
+        module {
+            // Repository
+            factory {
+                Repository(get())
+            }
 
-    val appViewModel
-        get() = AppViewModel(repository)
+            // ViewModel
+            viewModel {
+                AppViewModel(
+                    repository = get()
+                )
+            }
 
-    val json = Json() {
-        ignoreUnknownKeys = true
-    }
-
-    val repository = Repository()
-
+            factory {
+                Json {
+                    ignoreUnknownKeys = true
+                }
+            }
+        }
+    )
 }
