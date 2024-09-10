@@ -1,0 +1,80 @@
+{
+    "index": {
+        "page_title": {
+            "textContent": "Passwords"
+        },
+        "title": {
+            "textContent": "Welcome to My Mobile-Friendly Page!"
+        },
+        "p": {
+            "textContent": "This content will automatically adjust to fit different screen sizes."
+        }
+    },
+    "class1": {
+        "page_title": {
+            "textContent": "Olympics - Class 1"
+        },
+        "header": {
+            "h1": {
+                "textContent": "Brazilian athletes"
+            }
+        },
+        "main": {
+            "section": {
+                "input": {
+                    "placeholder": "Type the athlete's name"
+                },
+                "button": {
+                    "textContent": "Search"
+                }
+            }
+        },
+        "footer": {
+            "p1": {
+                "textContent": "2024 - Brazilian athletes. All rights reserved"
+            },
+            "p2": {
+                "textContent": "Contact by email: abc@def.com"
+            }
+        }
+    },
+    "class2": {
+        "page_title": {
+            "textContent": "Olympics - Class 2"
+        },
+        "main": {
+            "section": {
+                "a": {
+                    "textContent": "More info"
+                },
+                "rebeca_andrade_h2": {
+                    "textContent": "Rebeca Andrade"
+                },
+                "rebeca_andrade_p": {
+                    "textContent": "Rebeca Andrade is a renowned Brazilian gymnast who has made history in her sport. Known for her exceptional skills and athleticism, Andrade has won numerous medals at the Olympic Games and World Championships, solidifying her status as one of the greatest gymnasts in Brazil's history. Her dedication, talent, and determination have inspired countless young athletes and have brought immense pride to her country."
+                },
+                "rebeca_andrade_a": {
+                    "textContent": "More info"
+                },
+                "rayssa_leal_h2": {
+                    "textContent": "Rayssa Leal"
+                },
+                "rayssa_leal_p": {
+                    "textContent": "Rayssa Leal, a young Brazilian skateboarder, has captured the world's attention with her incredible talent and fearless style. At a young age, she has already achieved remarkable success, winning numerous international competitions and inspiring a new generation of skateboarders. Leal's dedication to her sport and her positive attitude have made her a role model for many."
+                },
+                "rayssa_leal_a": {
+                    "textContent": "More info"
+                },
+                "beatriz_souza_h2": {
+                    "textContent": "Beatriz Souza"
+                },
+                "beatriz_souza_p": {
+                    "textContent": "Beatriz Souza is a prominent Brazilian judoka who has consistently showcased her skill and determination on the international stage. With a strong focus on technique and strategy, Souza has achieved significant victories in major competitions, representing Brazil with pride. Her dedication to the sport and her positive attitude have made her a role model for aspiring judokas."
+                },
+                "beatriz_souza_a": {
+                    "textContent": "More info"
+                }
+            }
+        }
+    }
+}

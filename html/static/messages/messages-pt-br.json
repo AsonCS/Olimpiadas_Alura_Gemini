@@ -1,0 +1,80 @@
+{
+    "index": {
+        "page_title": {
+            "textContent": "Senhas"
+        },
+        "title": {
+            "textContent": "Bem vindo a pagina Mobile-Friendly!"
+        },
+        "p": {
+            "textContent": "Este conteúdo vai se ajustar automaticamente em diferentes tamanhos de tela"
+        }
+    },
+    "class1": {
+        "page_title": {
+            "textContent": "Olimpíadas - Class 1"
+        },
+        "header": {
+            "h1": {
+                "textContent": "Atletas do Brasil"
+            }
+        },
+        "main": {
+            "section": {
+                "input": {
+                    "placeholder": "Digite o nome do atleta"
+                },
+                "button": {
+                    "textContent": "Pesquisar"
+                }
+            }
+        },
+        "footer": {
+            "p1": {
+                "textContent": "2024 - Atletas do Brasil. Todos os direitos reservados"
+            },
+            "p2": {
+                "textContent": "Entre em contato pelo email: abc@def.com"
+            }
+        }
+    },
+    "class2": {
+        "page_title": {
+            "textContent": "Olimpíadas - Class 2"
+        },
+        "main": {
+            "section": {
+                "a": {
+                    "textContent": "Mais informações"
+                },
+                "rebeca_andrade_h2": {
+                    "textContent": "Rebeca Andrade"
+                },
+                "rebeca_andrade_p": {
+                    "textContent": "Rebeca Andrade é uma renomada ginasta brasileira que fez história em seu esporte. Conhecida por suas habilidades e capacidade atlética excepcionais, Andrade ganhou inúmeras medalhas nos Jogos Olímpicos e Campeonatos Mundiais, solidificando seu status como uma das maiores ginastas da história do Brasil. Sua dedicação, talento e determinação inspiraram inúmeros jovens atletas e trouxeram imenso orgulho ao seu país."
+                },
+                "rebeca_andrade_a": {
+                    "textContent": "Mais informações"
+                },
+                "rayssa_leal_h2": {
+                    "textContent": "Rayssa Leal"
+                },
+                "rayssa_leal_p": {
+                    "textContent": "Rayssa Leal, uma jovem skatista brasileira, conquistou o mundo com seu talento incrível e estilo destemido. Ainda muito jovem, ela já alcançou sucesso notável, vencendo inúmeras competições internacionais e inspirando uma nova geração de skatistas. A dedicação de Leal ao esporte e sua atitude positiva a tornaram um modelo para muitos."
+                },
+                "rayssa_leal_a": {
+                    "textContent": "Mais informações"
+                },
+                "beatriz_souza_h2": {
+                    "textContent": "Beatriz Souza"
+                },
+                "beatriz_souza_p": {
+                    "textContent": "Beatriz Souza é uma judoca brasileira proeminente que vem demonstrando consistentemente sua habilidade e determinação no cenário internacional. Com um forte foco em técnica e estratégia, Souza alcançou vitórias significativas em competições importantes, representando o Brasil com orgulho. Sua dedicação ao esporte e sua atitude positiva a tornaram um modelo para aspirantes a judocas."
+                },
+                "beatriz_souza_a": {
+                    "textContent": "Mais informações"
+                }
+            }
+        }
+    }
+}
