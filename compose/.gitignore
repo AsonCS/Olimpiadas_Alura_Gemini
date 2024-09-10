@@ -10,5 +10,15 @@
 .cxx
 local.properties
 .kotlin
-composeApp/build
+composeApp/build/classes
+composeApp/build/compileSync
+composeApp/build/compose
+composeApp/build/generated
+composeApp/build/intermediates
+composeApp/build/kotlin
+composeApp/build/kotlin-multiplatform-resources
+composeApp/build/kotlin-webpack
+composeApp/build/outputs
+composeApp/build/processedResources
+composeApp/build/tmp
 kotlin-js-store/yarn.lock

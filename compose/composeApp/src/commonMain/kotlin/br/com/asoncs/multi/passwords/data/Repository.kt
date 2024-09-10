@@ -6,8 +6,8 @@ import br.com.asoncs.multi.passwords.model.Athlete
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.serialization.json.Json
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.Res
 import org.jetbrains.compose.resources.ExperimentalResourceApi
-import passwords.composeapp.generated.resources.Res
 
 interface Repository {
 

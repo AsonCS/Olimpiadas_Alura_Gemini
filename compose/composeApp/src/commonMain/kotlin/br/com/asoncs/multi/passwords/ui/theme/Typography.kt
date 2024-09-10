@@ -9,17 +9,17 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.Font
-import passwords.composeapp.generated.resources.Res
-import passwords.composeapp.generated.resources.chakra_petch_bold
-import passwords.composeapp.generated.resources.chakra_petch_bold_italic
-import passwords.composeapp.generated.resources.chakra_petch_italic
-import passwords.composeapp.generated.resources.chakra_petch_light
-import passwords.composeapp.generated.resources.chakra_petch_light_italic
-import passwords.composeapp.generated.resources.chakra_petch_medium
-import passwords.composeapp.generated.resources.chakra_petch_medium_italic
-import passwords.composeapp.generated.resources.chakra_petch_regular
-import passwords.composeapp.generated.resources.chakra_petch_semi_bold
-import passwords.composeapp.generated.resources.chakra_petch_semi_bold_italic
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.Res
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_bold
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_bold_italic
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_italic
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_light
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_light_italic
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_medium
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_medium_italic
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_regular
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_semi_bold
+import olimpiadas_alura_googlegemini.composeapp.generated.resources.chakra_petch_semi_bold_italic
 
 @Composable
 fun appTypography() = MaterialTheme.typography

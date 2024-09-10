@@ -1,4 +1,4 @@
-rootProject.name = "Passwords"
+rootProject.name = "Olimpiadas_Alura_GoogleGemini"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

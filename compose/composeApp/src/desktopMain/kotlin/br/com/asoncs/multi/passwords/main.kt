@@ -7,7 +7,7 @@ import br.com.asoncs.multi.passwords.ui.App
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
-        title = "Passwords",
+        title = "Olimpíadas - Alura - Google Gemini",
     ) {
         App()
     }

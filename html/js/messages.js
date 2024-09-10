@@ -20,7 +20,7 @@ function getMessagesFile(lang) {
         default:
             lang = PATH_EN_US
     }
-    let path = `/html/static/messages/messages${lang}.json`
+    let path = `../static/messages/messages${lang}.json`
     return fetch(path)
         .then(response => response.json())
 }

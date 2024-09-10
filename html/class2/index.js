@@ -139,6 +139,6 @@ class Athlete {
  * @returns {Promise<Array<Athlete>>} Athletes.
  */
 function getAthletes() {
-    return fetch("/html/class2/athletes.json")
+    return fetch("athletes.json")
         .then(response => response.json())
 }
