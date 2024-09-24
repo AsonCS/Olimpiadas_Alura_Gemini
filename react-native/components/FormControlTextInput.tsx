@@ -2,7 +2,7 @@ import React from 'react';
 import { KeyboardTypeOptions } from 'react-native';
 import { FormControl, Input, Text } from 'native-base';
 
-interface FormControlTextInputProps {
+export interface FormControlTextInputProps {
 	isPassword?: boolean;
 	keyboardType?: KeyboardTypeOptions;
 	label: string;
