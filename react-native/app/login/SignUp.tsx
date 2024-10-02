@@ -5,10 +5,11 @@ import { FormControlTextInput as TextInput } from '@/components/FormControlTextI
 import { Button } from '@/components/Button';
 import { Title } from '@/components/Title';
 import { SignUpSection, useSignUpSections } from '@/hooks/useSignUpSections';
+import { navigateToTabs } from '@/navigation';
 
 import Logo from '@/assets/images/logo.png';
 
-export default function SignUp() {
+export default function SignUp({ navigation }: { navigation: any }) {
 	const [index, isLast, section, loadSections, setSection] =
 		useSignUpSections();
 
@@ -19,10 +20,10 @@ export default function SignUp() {
 
 	return (
 		<ScrollView
-			backgroundColor='white'
+			backgroundColor={'white'}
 			flex={1}
-			padding={10}
-			paddingBottom={50}
+			paddingTop={10}
+			paddingX={10}
 		>
 			<Image alignSelf={'center'} alt='Logo' source={Logo} />
 
@@ -32,6 +33,7 @@ export default function SignUp() {
 					isLast={isLast}
 					section={section}
 					setSection={setSection}
+					signUp={navigateToTabs(navigation)}
 				/>
 			)}
 		</ScrollView>
@@ -43,53 +45,72 @@ function Section({
 	isLast,
 	section,
 	setSection,
+	signUp,
 }: {
 	index: number;
 	isLast: boolean;
 	section: SignUpSection;
 	setSection: (newIndex: number) => void;
+	signUp: () => void;
 }) {
 	return (
 		<React.Fragment key={index}>
-			<Title>{section.title}</Title>
+			<Title marginTop={10}>{section.title}</Title>
 
 			<Box width={'100%'}>
 				{section.textInputs?.map((textInput, idx) => {
-					return <TextInput key={idx} {...textInput} />;
+					return <TextInput key={idx} marginTop={5} {...textInput} />;
 				})}
 			</Box>
 
 			{section.checkboxes && (
-				<Text
-					color={'blue.800'}
-					fontSize={'md'}
-					fontWeight={'bold'}
-					marginBottom={4}
-					marginTop={2}
-				>
-					Selecione o plano:
-				</Text>
+				<React.Fragment>
+					<Text
+						color={'blue.800'}
+						fontSize={'md'}
+						fontWeight={'bold'}
+						marginBottom={4}
+						marginTop={10}
+					>
+						Selecione o plano:
+					</Text>
+					<Box>
+						{section.checkboxes.map((checkbox, idx) => {
+							return (
+								<Checkbox
+									borderColor={'gray.200'}
+									key={idx}
+									value={checkbox.value}
+								>
+									<Text color={'gray.500'}>
+										{checkbox.value}
+									</Text>
+								</Checkbox>
+							);
+						})}
+					</Box>
+				</React.Fragment>
 			)}
-			<Box width={'100%'}>
-				{section.checkboxes?.map((checkbox, idx) => {
-					return (
-						<Checkbox key={idx} value={checkbox.value}>
-							{checkbox.value}
-						</Checkbox>
-					);
-				})}
-			</Box>
 
 			{index > 0 && (
 				<Button
-					backgroundColor={'gray.400'}
+					backgroundColor={'blue.800'}
+					marginTop={5}
+					opacity={0.6}
 					onPress={() => setSection(index - 1)}
 				>
 					Voltar
 				</Button>
 			)}
 			{!isLast && (
-				<Button onPress={() => setSection(index + 1)}>Avançar</Button>
+				<Button marginTop={5} onPress={() => setSection(index + 1)}>
+					Avançar
+				</Button>
+			)}
+			{isLast && (
+				<Button marginTop={5} onPress={() => signUp()}>
+					Cadastrar!
+				</Button>
 			)}
 		</React.Fragment>
 	);

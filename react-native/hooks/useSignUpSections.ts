@@ -20,7 +20,7 @@ export function useSignUpSections(): [
 	const loadSections = async () => {
 		setSections([
 			{
-				title: 'Insira alguns dados básicos',
+				title: 'Insira alguns dados básicos:',
 				textInputs: [
 					{
 						label: 'Nome',
@@ -29,17 +29,45 @@ export function useSignUpSections(): [
 					{
 						keyboardType: 'email-address',
 						label: 'Email',
-						placeholder: 'Digite seu email',
+						placeholder: 'Insira seu endereço de email',
+					},
+					{
+						isPassword: true,
+						label: 'Crie uma senha',
+						placeholder: 'Insira sua senha',
+					},
+					{
+						isPassword: true,
+						label: 'Repita a senha',
+						placeholder: 'Insira sua senha',
 					},
 				],
 			},
 			{
-				title: 'Mais alguns dados sobre você:',
+				title: 'Agora, mais alguns dados sobre você:',
 				textInputs: [
 					{
 						keyboardType: 'numeric',
 						label: 'CEP',
-						placeholder: 'Digite seu cep',
+						placeholder: 'Insira seu CEP',
+					},
+					{
+						label: 'Endereço',
+						placeholder: 'Insira seu endereço',
+					},
+					{
+						keyboardType: 'numeric',
+						label: 'Número',
+						placeholder: 'Insira seu número',
+					},
+					{
+						label: 'Complemento',
+						placeholder: 'Insira seu complemento',
+					},
+					{
+						keyboardType: 'phone-pad',
+						label: 'Telefone',
+						placeholder: '(00) 0 0000-0000',
 					},
 				],
 			},
@@ -51,6 +79,24 @@ export function useSignUpSections(): [
 					},
 					{
 						value: 'Unimed',
+					},
+					{
+						value: 'Bradesco',
+					},
+					{
+						value: 'Amil',
+					},
+					{
+						value: 'Biosaúde',
+					},
+					{
+						value: 'Biovida',
+					},
+					{
+						value: 'Outros',
+					},
+					{
+						value: 'Não tenho plano',
 					},
 				],
 			},

@@ -10,7 +10,6 @@ export function Button({ children, ...rest }: ButtonProps): React.JSX.Element {
 		<NSButton
 			backgroundColor={'blue.800'}
 			borderRadius={'lg'}
-			marginTop={10}
 			width={'100%'}
 			{...rest}
 		>
